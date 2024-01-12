@@ -1,13 +1,12 @@
 import { render, screen } from '@testing-library/react';
 
 import App from '../src/App';
+import { expect } from 'vitest';
 
 describe('App', () => {
-  it('renders headline', () => {
-    render(<App title="React" />);
+  it('renders correct heading', () => {
+    render(<App></App>);
+    expect(screen.getByRole('heading').textContent).toMatch(/First Test/i)
 
-    screen.debug();
-
-    // check if App components renders headline
   });
 });
